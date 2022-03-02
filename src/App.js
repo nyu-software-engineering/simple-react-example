@@ -47,14 +47,16 @@ const App = () => {
       <h1>Hello to the app</h1>
       <p>Lorem ipsum dolor sit amet foo bar baz bum</p>
       <PuppyForm /> {/* show the form for adding a new puppy */}
-      {/* loop through the array of puppy data, and return a component for each object therein */}
-      {puppies.map((puppy, i, puppiesArray) => (
-        <Puppy
-          name={puppy.name}
-          breed={puppy.breed}
-          handleClick={handleClick}
-        />
-      ))}
+      <section class="App-puppies">
+        {/* loop through the array of puppy data, and return a component for each object therein */}
+        {puppies.map((puppy, i, puppiesArray) => (
+          <Puppy
+            name={puppy.name}
+            breed={puppy.breed}
+            handleClick={handleClick}
+          />
+        ))}
+      </section>
     </main>
   )
 }

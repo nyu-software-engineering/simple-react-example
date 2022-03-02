@@ -6,9 +6,11 @@ const Puppy = props => {
   // react automatically bundles these arguments into an object called props
   return (
     <article className="Puppy" onClick={props.handleClick}>
-      <img src={puppyImage} alt="Puppy" />
-      <h1>{props.name}</h1>
-      <p>{props.breed}</p>
+      <img className="Puppy-img" src={puppyImage} alt="Puppy" />
+      <div className="Puppy-details">
+        <h1>{props.name}</h1>
+        <p>{props.breed}</p>
+      </div>
     </article>
   )
 }
