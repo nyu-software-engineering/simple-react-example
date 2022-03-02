@@ -5,15 +5,15 @@ import PuppyForm from "./PuppyForm"
 import { useEffect } from "react"
 
 const App = () => {
-  // run this function when the component first loads
   useEffect(() => {
+    // this function runs once when the component first loads
     // pop up an annoying message in the web browser
     alert(
       "hello world from within App.js!\nPlease open your browser's Developer Tools -> Javascript Console"
     )
     // print it more discretely to the Developer Tools -> Javascript Console
     console.log("hello world from within App.js!")
-  }, [])
+  }, []) // the empty array here is what causes this to run only once
 
   // a function that will be run anytime a user clicks on a puppy article
   const handleClick = e => {
@@ -21,6 +21,8 @@ const App = () => {
     console.log("You clicked a puppy!")
   }
 
+  // an array of puppy data... imagine this is fetched from a back-end server API
+  // we hard-code it here so we can focus on React.js, not back-end code
   const puppies = [
     {
       name: "Spot",
@@ -44,10 +46,9 @@ const App = () => {
     <main className="App">
       <h1>Hello to the app</h1>
       <p>Lorem ipsum dolor sit amet foo bar baz bum</p>
-
-      <PuppyForm />
-
-      {puppies.map((puppy, i, puppyArray) => (
+      <PuppyForm /> {/* show the form for adding a new puppy */}
+      {/* loop through the array of puppy data, and return a component for each object therein */}
+      {puppies.map((puppy, i, puppiesArray) => (
         <Puppy
           name={puppy.name}
           breed={puppy.breed}

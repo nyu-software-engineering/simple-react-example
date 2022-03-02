@@ -3,14 +3,15 @@ import axios from "axios"
 import "./PuppyForm.css"
 
 const PuppyForm = props => {
+  // create state variables and their setters so everytime thier value changes, the component updates them in the browser
   const [name, setName] = useState("")
   const [breed, setBreed] = useState("")
 
-  // run this function when the component first loads and whenever the breed value changes
   useEffect(() => {
+    // this function runs once when the component first loads and again whenever the value of the breed variable changes
     // check your browser's Developer Tools -> Javascript Console to see this printed when the component first loads and anytime the breed value changes
     console.log("hello world from within PuppyForm.js!")
-  }, [breed]) // this function will be re-run any time the value of breed changes
+  }, [breed]) // the variable name in the array here is what causes this function to re-run any time the value of breed changes
 
   // a function that will be run whenever the user submits the form
   const handleSubmit = e => {
