@@ -1,8 +1,7 @@
-import logo from "./logo.svg"
+import { useEffect } from "react"
 import "./App.css"
 import Puppy from "./Puppy"
 import PuppyForm from "./PuppyForm"
-import { useEffect } from "react"
 
 const App = () => {
   useEffect(() => {
