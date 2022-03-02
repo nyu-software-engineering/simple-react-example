@@ -1,6 +1,8 @@
-# Example from 2 March 2022
+# Simple React.js Example
 
-A simple React example showing:
+View a live version here: https://nyu-software-engineering.github.io/simple-react-example/
+
+This simple React example shows:
 
 - Components (a.k.a functions that return modular, reusable parts of the interface)
 - `JSX` (a.k.a HTML-like syntax for creating interface elements)
@@ -17,3 +19,7 @@ A simple React example showing:
 ## Start the React development server
 
 `npm start`
+
+## Build the production-ready files for hosting on a real web server
+
+`npm run build`
