@@ -1,7 +1,5 @@
 # Simple React.js Example
 
-View a live version here: https://nyu-software-engineering.github.io/simple-react-example/
-
 This simple React example shows:
 
 - Components (a.k.a functions that return modular, reusable parts of the interface)
