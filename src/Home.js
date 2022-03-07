@@ -46,7 +46,8 @@ const Home = () => {
     <main className="Home">
       <h1>Hello to the app</h1>
       <p>
-        Lorem <Link to="/about">ipsum dolor</Link> sit amet foo bar baz bum
+        Lorem <Link to="/about">about us</Link> ipsum dolor sit amet foo bar baz
+        bum
       </p>
       <PuppyForm /> {/* show the form for adding a new puppy */}
       <section class="Home-puppies">
