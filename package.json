@@ -1,6 +1,5 @@
 {
   "name": "simple-react-example",
-  "homepage": "https://nyu-software-engineering.github.io/simple-react-example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
