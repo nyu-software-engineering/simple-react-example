@@ -4,7 +4,7 @@ import About from "./About"
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
