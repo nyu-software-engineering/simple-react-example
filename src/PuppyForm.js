@@ -6,6 +6,7 @@ const PuppyForm = props => {
   // create state variables and their setters so everytime thier value changes, the component updates them in the browser
   const [name, setName] = useState("")
   const [breed, setBreed] = useState("")
+  const [error, setError] = useState("")
 
   useEffect(() => {
     // this function runs once when the component first loads and again whenever the value of the breed variable changes
@@ -32,6 +33,9 @@ const PuppyForm = props => {
       .catch(err => {
         // failure
         console.log(`Received server error: ${err}`)
+        setError(
+          "This form doesn't actually work, sorry.  There is no back-end for this example app in which to save the data. Pop open your web browser's Javascript Console to see the error trying to connect to a non-existent back-end."
+        )
       })
   }
 
@@ -42,24 +46,26 @@ const PuppyForm = props => {
         {breed && name && (
           <p>
             {/* if both breed and name have values */}
-            You are creating a {breed} with the name {name}.
+            You are creating a <strong>{breed}</strong> with the name{" "}
+            <strong>{name}</strong>.
           </p>
         )}
         {breed && !name && (
           <p>
             {/* if only breed has a value */}
-            You are creating a {breed}.
+            You are creating a <strong>{breed}</strong>
           </p>
         )}
         {!breed && name && (
           <p>
             {/* if only name has a value */}
-            You are naming a dog {name}.
+            You are naming a dog <strong>{name}</strong>.
           </p>
         )}
 
-        <div>
-          <label for="name_field">Name of the puppy:</label>
+        <div class="formField">
+          <label htmlFor="name_field">Name of the puppy:</label>
+          <br /> {/* a line break to separate the label from the input */}
           <input
             id="name_field"
             type="text"
@@ -68,8 +74,9 @@ const PuppyForm = props => {
             onChange={e => setName(e.target.value)}
           />
         </div>
-        <div>
-          <label for="breed_field">Breed of the puppy:</label>
+        <div class="formField">
+          <label htmlFor="breed_field">Breed of the puppy:</label>
+          <br /> {/* a line break to separate the label from the input */}
           <input
             id="breed_field"
             type="text"
@@ -78,6 +85,11 @@ const PuppyForm = props => {
             onChange={e => setBreed(e.target.value)}
           />
         </div>
+        {error && (
+          <div>
+            <p className="PuppyForm-feedback">{error}</p>
+          </div>
+        )}
         <div>
           <input type="submit" value="Save puppy!" />
         </div>

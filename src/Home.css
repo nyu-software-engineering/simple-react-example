@@ -7,4 +7,11 @@
   /* use flexbox to create a tiling area with a row of puppy articles inside */
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+}
+
+p.Home-feedback {
+  color: green;
+  background-color: #aaffaa;
+  padding: 20px;
 }

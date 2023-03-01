@@ -3,3 +3,19 @@ form {
   padding: 20px;
   margin-bottom: 20px;
 }
+
+.formField {
+  margin-top: 10px;
+}
+
+p.PuppyForm-feedback {
+  color: red;
+  background-color: pink;
+  padding: 20px;
+}
+
+.formField input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+}

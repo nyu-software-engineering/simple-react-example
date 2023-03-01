@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 import "./Home.css"
 import Puppy from "./Puppy"
 import PuppyForm from "./PuppyForm"
 
 const Home = () => {
+  const [feedback, setFeedback] = useState("")
+
   useEffect(() => {
     // this function runs once when the component first loads
     // pop up an annoying message in the web browser
@@ -17,7 +19,7 @@ const Home = () => {
 
   // a function that will be run anytime a user clicks on a puppy article
   const handleClick = e => {
-    alert("You clicked a puppy!")
+    setFeedback("You clicked a puppy!")
     console.log("You clicked a puppy!")
   }
 
@@ -27,18 +29,22 @@ const Home = () => {
     {
       name: "Spot",
       breed: "Schnauzer",
+      img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
     },
     {
       name: "Tobik",
       breed: "German Shepherd",
+      img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
     },
     {
       name: "Fido",
       breed: "Chihuahua",
+      img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
     },
     {
       name: "Kenny",
       breed: "Beagle",
+      img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
     },
   ]
 
@@ -50,12 +56,21 @@ const Home = () => {
         bum
       </p>
       <PuppyForm /> {/* show the form for adding a new puppy */}
-      <section class="Home-puppies">
-        {/* loop through the array of puppy data, and return a component for each object therein */}
+      {feedback && (
+        <div>
+          <p class="Home-feedback">{feedback}</p>
+        </div>
+      )}
+      <section className="Home-puppies">
+        {/*
+         * loop through the array of puppy data, and return a component for each object therein
+         * note how we pass arguments to the Puppy component, including a function definition.
+         */}
         {puppies.map((puppy, i, puppiesArray) => (
           <Puppy
             name={puppy.name}
             breed={puppy.breed}
+            puppyImg={puppy.img}
             handleClick={handleClick}
           />
         ))}

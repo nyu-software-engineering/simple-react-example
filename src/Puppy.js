@@ -1,4 +1,3 @@
-import puppyImage from "./puppy.jpg"
 import "./Puppy.css"
 
 const Puppy = props => {
@@ -6,7 +5,7 @@ const Puppy = props => {
   // react automatically bundles these arguments into an object called props
   return (
     <article className="Puppy" onClick={props.handleClick}>
-      <img className="Puppy-img" src={puppyImage} alt="Puppy" />
+      <img className="Puppy-img" src={props.puppyImg} alt="Puppy" />
       <div className="Puppy-details">
         <h1>{props.name}</h1>
         <p>{props.breed}</p>
