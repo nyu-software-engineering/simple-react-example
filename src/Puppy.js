@@ -3,12 +3,12 @@ import "./Puppy.css"
 const Puppy = props => {
   // this component expects to receive 'name', 'breed', and 'handleClick' values passed as arguments to it
   // react automatically bundles these arguments into an object called props
-  // when a user clicks on the article, it calls the provided callback and passes the name and breed of the clicked-on puppy
+  // when a user clicks on the article, it calls the provided callback and passes the name, breed, and sound of the clicked-on puppy
   return (
     <article
       className="Puppy"
       onClick={() => {
-        props.handleClick(props.name, props.breed)
+        props.handleClick(props.name, props.breed, props.sound)
       }}
     >
       <img className="Puppy-img" src={props.puppyImg} alt="Puppy" />
