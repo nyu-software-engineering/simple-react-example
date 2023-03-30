@@ -18,9 +18,10 @@ const Home = () => {
   }, []) // the empty array here is what causes this to run only once
 
   // a function that will be run anytime a user clicks on a puppy article
-  const handleClick = e => {
-    setFeedback("You clicked a puppy!")
-    console.log("You clicked a puppy!")
+  // see the code in Puppy.js for how this function is passed the name and breed of the clicked-on puppy
+  const handleClick = (name, breed) => {
+    setFeedback(`You clicked on ${name} the ${breed}!`)
+    console.log(`You clicked on ${name} the ${breed}!`)
   }
 
   // an array of puppy data... imagine this is fetched from a back-end server API
