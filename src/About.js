@@ -14,7 +14,10 @@ const About = props => {
           on GitHub
         </a>
       </p>
-      <img src={process.env.PUBLIC_URL + '/puppy.jpg'} alt="Puppies puppies!" />
+      <img
+        src={process.env.PUBLIC_URL + '/images/puppy.jpg'}
+        alt="Puppies puppies!"
+      />
     </main>
   )
 }

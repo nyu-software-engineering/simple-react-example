@@ -6,6 +6,7 @@ const PuppyForm = props => {
   // create state variables and their setters so everytime thier value changes, the component updates them in the browser
   const [name, setName] = useState('')
   const [breed, setBreed] = useState('')
+  const [photo, setPhoto] = useState(null)
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -19,13 +20,24 @@ const PuppyForm = props => {
     e.preventDefault() // prevent the default browser form submission stuff
 
     // send the data of the new puppy to a server
-    // this server doesn't exist, so we will see an error in the console
+
+    // assemble a FormData object in memory... this will be sent to server API end-point
+    const formData = new FormData()
+    formData.append('name', name)
+    formData.append('breed', breed)
+    formData.append('photo', photo)
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    }
+
+    const apiUrl = 'https://someserversomehwere.com/puppy/save' // the server API endpoint where request to save puppies will be made
+    // note... this server doesn't exist in this example, so we will see an error in the console
+
     // axios' get() and post() methods return a promise, so we can use our javascript Promise or async/await expertise here to deal with the resolution or rejection of the request
     axios
-      .post('https://someserversomehwere.com/puppy/save', {
-        name: name,
-        breed: breed,
-      })
+      .post(apiUrl, formData, config)
       .then(response => {
         // success
         console.log(`Received server response: ${response.data}`)
@@ -47,19 +59,21 @@ const PuppyForm = props => {
           <p>
             {/* if both breed and name have values */}
             You are creating a <strong>{breed}</strong> with the name{' '}
-            <strong>{name}</strong>.
+            <strong>{name}</strong>.{photo ? ' Cute photo!!' : ''}
           </p>
         )}
         {breed && !name && (
           <p>
             {/* if only breed has a value */}
             You are creating a <strong>{breed}</strong>
+            {photo ? ' Wonderful photo!' : ''}
           </p>
         )}
         {!breed && name && (
           <p>
             {/* if only name has a value */}
             You are naming a dog <strong>{name}</strong>.
+            {photo ? ' Nice photo!' : ''}
           </p>
         )}
 
@@ -83,6 +97,17 @@ const PuppyForm = props => {
             placeholder="Puppy breed"
             value={breed}
             onChange={e => setBreed(e.target.value)}
+          />
+        </div>
+        <div class="formField">
+          <label htmlFor="image_field">Photo of the puppy:</label>
+          <br /> {/* a line break to separate the label from the input */}
+          <input
+            id="image_field"
+            accept="image/*"
+            type="file"
+            placeholder="Puppy photo"
+            onChange={e => setPhoto(e.target.files[0])}
           />
         </div>
         {error && (
