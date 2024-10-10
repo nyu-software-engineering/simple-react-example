@@ -77,7 +77,7 @@ const PuppyForm = props => {
           </p>
         )}
 
-        <div class="formField">
+        <div className="formField">
           <label htmlFor="name_field">Name of the puppy:</label>
           <br /> {/* a line break to separate the label from the input */}
           <input
@@ -88,7 +88,7 @@ const PuppyForm = props => {
             onChange={e => setName(e.target.value)}
           />
         </div>
-        <div class="formField">
+        <div className="formField">
           <label htmlFor="breed_field">Breed of the puppy:</label>
           <br /> {/* a line break to separate the label from the input */}
           <input
@@ -99,7 +99,7 @@ const PuppyForm = props => {
             onChange={e => setBreed(e.target.value)}
           />
         </div>
-        <div class="formField">
+        <div className="formField">
           <label htmlFor="image_field">Photo of the puppy:</label>
           <br /> {/* a line break to separate the label from the input */}
           <input

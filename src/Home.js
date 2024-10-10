@@ -63,7 +63,7 @@ const Home = () => {
       <PuppyForm /> {/* show the form for adding a new puppy */}
       {feedback && (
         <div>
-          <p class="Home-feedback">{feedback}</p>
+          <p className="Home-feedback">{feedback}</p>
         </div>
       )}
       <section className="Home-puppies">
@@ -73,6 +73,7 @@ const Home = () => {
          */}
         {puppies.map((puppy, i, puppiesArray) => (
           <Puppy
+            key={i} /* React wants a unique 'key' attribute for JSX in loops */
             name={puppy.name}
             breed={puppy.breed}
             puppyImg={puppy.img}
