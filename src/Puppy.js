@@ -1,4 +1,4 @@
-import "./Puppy.css"
+import './Puppy.css'
 
 const Puppy = props => {
   // this component expects to receive 'name', 'breed', and 'handleClick' values passed as arguments to it

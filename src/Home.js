@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom"
-import { useState, useEffect } from "react"
-import "./Home.css"
-import Puppy from "./Puppy"
-import PuppyForm from "./PuppyForm"
+import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import './Home.css'
+import Puppy from './Puppy'
+import PuppyForm from './PuppyForm'
 
 const Home = () => {
-  const [feedback, setFeedback] = useState("")
+  const [feedback, setFeedback] = useState('')
 
   useEffect(() => {
     // this function runs once when the component first loads
@@ -14,7 +14,7 @@ const Home = () => {
       "hello world from within Home.js!\nPlease open your browser's Developer Tools -> Javascript Console"
     )
     // print it more discretely to the Developer Tools -> Javascript Console
-    console.log("hello world from within Home.js!")
+    console.log('hello world from within Home.js!')
   }, []) // the empty array here is what causes this to run only once
 
   // a function that will be run anytime a user clicks on a puppy article
@@ -28,28 +28,28 @@ const Home = () => {
   // we hard-code it here so we can focus on React.js, not back-end code
   const puppies = [
     {
-      name: "Spot",
-      breed: "Schnauzer",
+      name: 'Spot',
+      breed: 'Schnauzer',
       img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
-      sound: "Woof",
+      sound: 'Woof',
     },
     {
-      name: "Tobik",
-      breed: "German Shepherd",
+      name: 'Tobik',
+      breed: 'German Shepherd',
       img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
-      sound: "Woof",
+      sound: 'Woof',
     },
     {
-      name: "Fido",
-      breed: "Chihuahua",
+      name: 'Fido',
+      breed: 'Chihuahua',
       img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
-      sound: "Growl",
+      sound: 'Growl',
     },
     {
-      name: "Kenny",
-      breed: "Beagle",
+      name: 'Kenny',
+      breed: 'Beagle',
       img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
-      sound: "Meow",
+      sound: 'Meow',
     },
   ]
 
