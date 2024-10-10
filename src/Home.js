@@ -30,25 +30,25 @@ const Home = () => {
     {
       name: 'Spot',
       breed: 'Schnauzer',
-      img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
+      img: `${process.env.PUBLIC_URL}/images/puppy-schnauzer.png`, // a nice way to reference files in the 'public' directory
       sound: 'Woof',
     },
     {
       name: 'Tobik',
       breed: 'German Shepherd',
-      img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
+      img: `${process.env.PUBLIC_URL}/images/puppy-german-shepherd.png`, // a nice way to reference files in the 'public' directory
       sound: 'Woof',
     },
     {
       name: 'Fido',
       breed: 'Chihuahua',
-      img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
+      img: `${process.env.PUBLIC_URL}/images/puppy-chihuahua.png`, // a nice way to reference files in the 'public' directory
       sound: 'Growl',
     },
     {
       name: 'Kenny',
       breed: 'Beagle',
-      img: `${process.env.PUBLIC_URL}/puppy.jpg`, // a nice way to reference files in the 'public' directory
+      img: `${process.env.PUBLIC_URL}/images/puppy-beagle.png`, // a nice way to reference files in the 'public' directory
       sound: 'Meow',
     },
   ]
