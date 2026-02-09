@@ -22,6 +22,8 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: 'build',
     },
+    // set the base directory for local vs GitHub Pages deploy
+    base: mode === 'production' ? '/simple-react-example/' : '/',
     esbuild: {
       jsxInject: `import React from 'react'`,
     },
