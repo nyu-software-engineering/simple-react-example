@@ -11,7 +11,7 @@ const Home = () => {
     // this function runs once when the component first loads
     // pop up an annoying message in the web browser
     alert(
-      "hello world from within Home.js!\nPlease open your browser's Developer Tools -> Javascript Console"
+      "hello world from within Home.js!\nPlease open your browser's Developer Tools -> Javascript Console",
     )
     // print it more discretely to the Developer Tools -> Javascript Console
     console.log('hello world from within Home.js!')
@@ -30,25 +30,25 @@ const Home = () => {
     {
       name: 'Spot',
       breed: 'Schnauzer',
-      img: `${process.env.PUBLIC_URL}/images/puppy-schnauzer.png`, // a nice way to reference files in the 'public' directory
+      img: `/images/puppy-schnauzer.png`, // a nice way to reference files in the 'public' directory
       sound: 'Woof',
     },
     {
       name: 'Tobik',
       breed: 'German Shepherd',
-      img: `${process.env.PUBLIC_URL}/images/puppy-german-shepherd.png`, // a nice way to reference files in the 'public' directory
+      img: `/images/puppy-german-shepherd.png`, // a nice way to reference files in the 'public' directory
       sound: 'Woof',
     },
     {
       name: 'Fido',
       breed: 'Chihuahua',
-      img: `${process.env.PUBLIC_URL}/images/puppy-chihuahua.png`, // a nice way to reference files in the 'public' directory
+      img: `/images/puppy-chihuahua.png`, // a nice way to reference files in the 'public' directory
       sound: 'Growl',
     },
     {
       name: 'Kenny',
       breed: 'Beagle',
-      img: `${process.env.PUBLIC_URL}/images/puppy-beagle.png`, // a nice way to reference files in the 'public' directory
+      img: `/images/puppy-beagle.png`, // a nice way to reference files in the 'public' directory
       sound: 'Meow',
     },
   ]

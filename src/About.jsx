@@ -15,7 +15,7 @@ const About = props => {
         </a>
       </p>
       <img
-        src={process.env.PUBLIC_URL + '/images/puppy.jpg'}
+        src={import.meta.env.PUBLIC_URL + '/images/puppy.jpg'}
         alt="Puppies puppies!"
       />
     </main>
