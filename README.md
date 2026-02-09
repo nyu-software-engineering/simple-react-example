@@ -20,12 +20,12 @@ Install and configure the dependencies listed in the `package.json` file using `
 
 ## Start the React development server
 
-This command launches React's in-memory web server that serves up the pages.  It includes "hot reloading", meaning that if you modify the code files, the server updates accordingly, so you don't have to stop and restart the server manually with every change.  Note that modification of some files, such as `.env` settings files, do not trigger the hot reload.
+This command launches React's in-memory web server that serves up the pages. It includes "hot reloading", meaning that if you modify the code files, the server updates accordingly, so you don't have to stop and restart the server manually with every change. Note that modification of some files, such as `.env` settings files, do not trigger the hot reload.
 
-`npm start`
+`npm run dev`
 
 ## Build the production-ready files for hosting on a real web server
 
-When ready to publish a completed site, you will want React to generate the completed HTML, CSS, Javascript and other asset files in a way that a standard web server can host them.  To do so, run ...
+When ready to publish a completed site, you will want React to generate the completed HTML, CSS, Javascript and other asset files in a way that a standard web server can host them. To do so, run ...
 
 `npm run build`
