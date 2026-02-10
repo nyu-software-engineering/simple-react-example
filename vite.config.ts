@@ -24,9 +24,6 @@ export default defineConfig(({ mode }) => {
     },
     // set the base directory for local vs GitHub Pages deploy
     base: mode === 'production' ? '/simple-react-example/' : '/',
-    esbuild: {
-      jsxInject: `import React from 'react'`,
-    },
 
     // open browser on start, like create-react-app did
     // open at port number specified in .env file
