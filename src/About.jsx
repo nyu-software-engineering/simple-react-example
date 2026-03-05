@@ -14,10 +14,7 @@ const About = props => {
           on GitHub
         </a>
       </p>
-      <img
-        src={import.meta.env.PUBLIC_URL + '/images/puppy.jpg'}
-        alt="Puppies puppies!"
-      />
+      <img src="/images/puppy.jpg" alt="Puppies puppies!" />
     </main>
   )
 }
