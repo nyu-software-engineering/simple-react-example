@@ -9,11 +9,22 @@ const PuppyForm = props => {
   const [photo, setPhoto] = useState(null)
   const [error, setError] = useState('')
 
+  // this side-effect will run once when the component first loads
+  useEffect(() => {
+    // component loaded!
+    console.log('PuppyForm component loaded!')
+  }, []) // empty array as second argument means run this once only
+
+  // this side-effect will run whenever the breed changes
   useEffect(() => {
     // this function runs once when the component first loads and again whenever the value of the breed variable changes
     // check your browser's Developer Tools -> Javascript Console to see this printed when the component first loads and anytime the breed value changes
-    console.log('hello world from within PuppyForm.js!')
+    console.log('You changed the breed of the dog!!')
   }, [breed]) // the variable name in the array here is what causes this function to re-run any time the value of breed changes
+
+  useEffect(() => {
+    console.log('You changed the name or the breed of the dog!')
+  }, [breed, name])
 
   // a function that will be run whenever the user submits the form
   const handleSubmit = e => {
@@ -46,7 +57,7 @@ const PuppyForm = props => {
         // failure
         console.log(`Received server error: ${err}`)
         setError(
-          "This form doesn't actually work, sorry.  There is no back-end for this example app in which to save the data. Pop open your web browser's Javascript Console to see the error trying to connect to a non-existent back-end."
+          "This form doesn't actually work, sorry.  There is no back-end for this example app in which to save the data. Pop open your web browser's Javascript Console to see the error trying to connect to a non-existent back-end.",
         )
       })
   }
